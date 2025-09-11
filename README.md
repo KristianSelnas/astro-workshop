@@ -1,46 +1,50 @@
-# Astro Starter Kit: Basics
+# Astro + Unpoly Workshop 🌟
 
-```sh
-npm create astro@latest -- --template basics
-```
+Velkommen! Her skal du lære grunnleggende Astro med Unpoly for interaktive nettsider uten tung SPA.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Kom i gang
 
-## 🚀 Project Structure
+1. Klon repoet og installer avhengigheter
+   ```sh
+   git clone [URL-TIL-REPO]
+   cd astro-workshop
+   npm install
+   npm run dev
+    ```
+2. Åpne http://localhost:4321 i nettleseren din
 
-Inside of your Astro project, you'll see the following folders and files:
+## Workshop-oppgaver
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+### 1. Bli kjent med Astro 
+**Mål:** Bli kjent med prosjektstrukturen, filbasert ruting, og hvordan man oppretter nye sider og komponenter.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+**Steg:**
+1. Åpne `src/pages/index.astro` og endre teksten på forsiden (for eksempel overskrift eller innhold).
+2. Åpne layout-componenten og observer at layouts i Astro er en helt ordinær komponent med en `<slot/>` for å rendre children. 
+3. Lag en ny side: Opprett `about.astro` i `src/pages` med f.eks. overskrift og litt tekst.
+4. Naviger mellom forsiden (/) og den nye about-siden (/about) og observer at hele siden lastes på nytt hver gang.
+5. Endre tittelen på about-siden ved hjelp av `title` prop'en til `BaseLayout`.
+6. Opprett en menykomponent `Menu.astro` i `src/components`. Legg inn lenker til forsiden og about-siden. Ta i bruk meny-komponenten i `BaseLayout.astro`.
 
-## 🧞 Commands
+> **Tips** 
+> Styling i er lokalt scopet i komponenter i Astro. Hvis du legger en `<style>`-blokk i en komponent vil stylingen kun gjelde lokalt i komponenten.
 
-All commands are run from the root of the project, from a terminal:
+### 2. Unpoly og sømløs navigasjon
+**Mål:** Se hvordan Unpoly forbedrer sidebytter ved å gjøre de sømløse og hurtige.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**Steg:**
+1. Åpne `src/layouts/BaseLayout.astro` og observer at Unpoly er lagt til. 
+2. Finn `<a>`-taggene i menyen og legg til `up-follow`, for eksempel `<a href="/about" up-follow>Om</a>`.
+3. Naviger mellom forskjellige sider og legg merke til at du nå slipper full sideoppdatering – bare innholdet skiftes raskt ut.
+4. Legg til `up-transition="move-left"` på lenkene i menyen for å animere overgangen mellom sidene
 
-## 👀 Want to learn more?
+### 3. Komponenter og interaktivitet
+**Mål:** Lær å bruke Astro-komponenter og forstå hvordan state fungerer sammen med Unpoly.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**Steg:**
+1. Legg til `<FormCounter>`-komponenten fra `src/components/FormCounter.astro` på forsiden. 
+Legg merke hvordan den oppdaterer en teller med en POST request til serveren. 
+2. Legg inn attributtet `up-submit` på `<form>`-elementet. Legg merke at Unpoly nå overtar requesten og oppdaterer siden.
+2. Legg på `up-target="#counter-wrapper"` i tilleg til `up-submit`. Unpoly vil nå kun byttet ut innholdet i `<div id="counter-wrapper">` med responsen fra serveren. 
+3. Skriv ut verdien av `{count}` _utenfor_ `counter-wrapper`-div'en og se at denne verdien ikke blir oppdatert.
+

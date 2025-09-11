@@ -1,0 +1,23 @@
+---
+const getCount = async () => {
+  const formData = await Astro.request.formData();
+  const increment = Number.parseInt(formData.get("increment")?.toString() || "0", 10);
+  const decrement = Number.parseInt(formData.get("decrement")?.toString() || "0", 10);
+  console.log({ formData, increment, decrement });
+  return Number.parseInt(formData.get("count")?.toString() || "0", 10) + increment - decrement;
+}
+
+const count = Astro.request.method === "POST" ? await getCount() : 0;
+
+---
+<div id="counter-wrapper">
+    Du har trykket <span id="count">{count}</span> gang{count !== 1 && "er"}.
+
+    <form method="POST" up-submit>
+        <input type="hidden" name="count" value={count} />
+        <button name="decrement" value="1" type="submit">-</button>
+        <button name="increment" value="+1" type="submit">+</button>
+    </form>
+</div>
+
+<p>Counter er utenfor up-target: {count}</p>
