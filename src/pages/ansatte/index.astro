@@ -1,0 +1,18 @@
+---
+import EmployeeCard from "../../components/EmployeeCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { fetchEmployees } from "../../utils/employee-service";
+
+const employees = await fetchEmployees();
+---
+<BaseLayout>
+    <h1>Ansatte</h1>
+    <ul class="kls-card-list">
+        {employees.map(employee => (
+            <li>
+                <EmployeeCard employee={employee} />
+            </li>
+        ))}
+    </ul>
+    <a href="/ansatte/legg-til" class="kls-button">+ Legg til</a>
+</BaseLayout>

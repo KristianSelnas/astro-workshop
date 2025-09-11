@@ -1,0 +1,14 @@
+---
+import type { Employee } from "../pages/api/ansatte/_db";
+interface Props {
+    employee: Employee;
+}
+
+const { employee } = Astro.props;
+---
+
+<div class="kls-card">
+    <h2><a href={`/ansatte/${employee.id}`}>{employee.name}</a></h2>
+    <p><strong>Stilling:</strong> {employee.position}</p>
+    <p><strong>E-post:</strong> {employee.email}</p>
+</div>
