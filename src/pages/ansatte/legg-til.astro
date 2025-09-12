@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { addEmployee } from "../../utils/employee-service";
+
+if (Astro.request.method === "POST") {
+    const formData = await Astro.request.formData();
+    const name = formData.get("name")?.toString() || "";
+    const position = formData.get("position")?.toString() || "";
+    const email = formData.get("email")?.toString() || "";
+
+    await addEmployee({ name, position, email });
+
+    return Astro.redirect("/ansatte");
+}
+---
+
+<BaseLayout title="Legg til ansatt">
+    <h1>Legg til ansatt</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Navn</label>
+            <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+            <label for="position">Stilling</label>
+            <input type="text" id="position" name="position" required />
+        </div>
+        <div class="form-group">
+            <label for="email">E-post</label>
+            <input type="email" id="email" name="email" required />
+        </div>
+        <button type="submit">Legg til</button>
+    </form>
+</BaseLayout>

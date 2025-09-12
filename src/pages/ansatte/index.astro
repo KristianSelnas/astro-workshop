@@ -6,7 +6,10 @@ import { fetchEmployees } from "../../utils/employee-service";
 const employees = await fetchEmployees();
 ---
 <BaseLayout>
+    <div>
     <h1>Ansatte</h1>
+    <a href="/ansatte/legg-til" class="button">+ Legg til</a>
+</div>
     <ul class="employee-list">
         {employees.map(employee => (
             <li>
@@ -20,5 +23,8 @@ const employees = await fetchEmployees();
     .employee-list {
         list-style: none;
         padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 1rem;
     }
 </style>
