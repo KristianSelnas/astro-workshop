@@ -1,0 +1,24 @@
+---
+import EmployeeCard from "../../components/EmployeeCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { fetchEmployees } from "../../utils/employee-service";
+
+const employees = await fetchEmployees();
+---
+<BaseLayout>
+    <h1>Ansatte</h1>
+    <ul class="employee-list">
+        {employees.map(employee => (
+            <li>
+                <EmployeeCard employee={employee} />
+            </li>
+        ))}
+    </ul>
+</BaseLayout>
+
+<style>
+    .employee-list {
+        list-style: none;
+        padding: 0;
+    }
+</style>
