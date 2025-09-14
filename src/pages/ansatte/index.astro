@@ -7,10 +7,10 @@ const employees = await fetchEmployees();
 ---
 <BaseLayout>
     <div>
-    <h1>Ansatte</h1>
-    <a href="/ansatte/legg-til" class="kls-button">+ Legg til</a>
-</div>
-    <ul class="employee-list">
+        <h1>Ansatte</h1>
+        <a href="/ansatte/legg-til" class="kls-button">+ Legg til</a>
+    </div>
+    <ul class="kls-card-list">
         {employees.map(employee => (
             <li>
                 <EmployeeCard employee={employee} />
@@ -18,13 +18,3 @@ const employees = await fetchEmployees();
         ))}
     </ul>
 </BaseLayout>
-
-<style>
-    .employee-list {
-        list-style: none;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        gap: 1rem;
-    }
-</style>

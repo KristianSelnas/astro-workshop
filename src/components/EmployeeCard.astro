@@ -5,22 +5,8 @@ import type { Employee } from "../pages/api/ansatte/_db";
 const { employee } = Astro.props as { employee: Employee};
 ---
 
-<div class="employee-card">
-    <h2>{employee.name}</h2>
+<div class="kls-card">
+    <h2><a href={`/ansatte/${employee.id}`} up-layer="new">{employee.name}</a> </h2>
     <p><strong>Stilling:</strong> {employee.position}</p>
     <p><strong>E-post:</strong> {employee.email}</p>
 </div>
-
-
-<style>
-    .employee-card {
-        border: 1px solid #ccc;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-
-            h2 {
-                margin-top: 0;
-            }
-    }
-</style>
