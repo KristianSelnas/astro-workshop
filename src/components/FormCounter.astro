@@ -13,11 +13,11 @@ const count = Astro.request.method === "POST" ? await getCount() : 0;
 <div id="counter-wrapper">
     Du har trykket <span id="count">{count}</span> gang{count !== 1 && "er"}.
 
-    <form method="POST" up-submit up-target="#counter-wrapper">
+    <form class="kls-form" method="POST" up-submit up-target="#counter-wrapper">
         <input type="hidden" name="count" value={count} />
-        <div>
-            <button name="decrement" value="1" type="submit">-</button>
-            <button name="increment" value="+1" type="submit">+</button>
+        <div class="kls-button-group">
+            <button class="kls-button" name="decrement" value="1" type="submit">-</button>
+            <button class="kls-button" name="increment" value="+1" type="submit">+</button>
         </div>
     </form>
 </div>

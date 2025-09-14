@@ -1,9 +1,9 @@
 ---
-import FormCounter from '../components/FormCounter.astro';
+import ReactCounter from '../components/ReactCounter';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
 	<h1>Astro + Unpoly = ❤️</h1>
-	<FormCounter />
+	<ReactCounter  client:load />
 </BaseLayout>

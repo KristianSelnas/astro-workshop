@@ -16,19 +16,19 @@ if (Astro.request.method === "POST") {
 
 <BaseLayout title="Legg til ansatt">
     <h1>Legg til ansatt</h1>
-    <form method="POST">
-        <div class="form-group">
+    <form class="kls-form" method="POST">
+        <div class="kls-form-group">
             <label for="name">Navn</label>
             <input type="text" id="name" name="name" required />
         </div>
-        <div class="form-group">
+        <div class="kls-form-group">
             <label for="position">Stilling</label>
             <input type="text" id="position" name="position" required />
         </div>
-        <div class="form-group">
+        <div class="kls-form-group">
             <label for="email">E-post</label>
             <input type="email" id="email" name="email" required />
         </div>
-        <button type="submit">Legg til</button>
+        <button class="kls-button" type="submit">Legg til</button>
     </form>
 </BaseLayout>
