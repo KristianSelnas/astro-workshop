@@ -47,7 +47,7 @@ Lær hvordan du håndterer dynamiske URL-er og henter data.
 
 > **💡 Tips:** Request-parametre kan hentes ut fra `Astro.params`.
 >
-> **🔍 Sjekk ut:** `fetchEmployeeById` i [`employee-service.ts`](src/utils/employee-service.ts).
+> 🔍 Ta en kikk på `fetchEmployeeById` i [`employee-service.ts`](src/utils/employee-service.ts).
 
 ### 🏝️ React-integrasjon med Astro Islands
 
