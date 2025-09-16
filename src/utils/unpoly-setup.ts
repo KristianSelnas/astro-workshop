@@ -1,2 +1,2 @@
-import 'unpoly/unpoly.min.css'
-import 'unpoly'
+import "unpoly/unpoly.min.css";
+import "unpoly";
