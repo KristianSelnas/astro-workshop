@@ -6,10 +6,7 @@ import { fetchEmployees } from "../../utils/employee-service";
 const employees = await fetchEmployees();
 ---
 <BaseLayout>
-    <div>
-        <h1>Ansatte</h1>
-        <a href="/ansatte/legg-til" class="kls-button">+ Legg til</a>
-    </div>
+    <h1>Ansatte</h1>
     <ul class="kls-card-list">
         {employees.map(employee => (
             <li>
@@ -17,4 +14,5 @@ const employees = await fetchEmployees();
             </li>
         ))}
     </ul>
+    <a href="/ansatte/legg-til" class="kls-button">+ Legg til</a>
 </BaseLayout>
