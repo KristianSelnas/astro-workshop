@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FormCounter from "../../components/FormCounter.astro";
+import ReactCounter from "../../components/ReactCounter";
+
+---
+
+<BaseLayout title="Counter-eksempel">
+	<h1>Eksempler</h1>
+	<h2>Enkel teller laget med SSR Astro</h2>
+  <FormCounter />
+
+  <h2>React teller som Astro Island</h2>
+  <ReactCounter client:load />
+</BaseLayout>
