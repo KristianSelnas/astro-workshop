@@ -18,7 +18,7 @@
 
 ## 📚 Workshop-oppgaver
 
-### 🔭 1. Grunnleggende Astro
+### 🔭 Grunnleggende Astro
 
 Lær det grunnleggende i Astro og hvordan sidenavigasjon fungerer.
 
@@ -29,7 +29,7 @@ Lær det grunnleggende i Astro og hvordan sidenavigasjon fungerer.
 
 > **💡 Tips:** Styling i Astro er lokalt scopet i komponenter. Hvis du legger en `<style>`-blokk i en komponent, vil stylingen kun gjelde lokalt i den komponenten.
 
-### 🧩 2. Komponenter i Astro
+### 🧩Komponenter i Astro
 
 Bygg gjenbrukbare komponenter for å strukturere koden.
 
@@ -37,7 +37,7 @@ Bygg gjenbrukbare komponenter for å strukturere koden.
 2.  **Dynamisk tittel:** Endre tittelen på about-siden ved hjelp av `title` prop'en til `BaseLayout`.
 3.  **Enkel Hello-komponent:** Lag en enkel komponent `Hello.astro` i `/components` med prop `name`. Bruk denne på forsiden og about-siden med ulike navn.
 
-### 🌐 3. Dynamiske ruter og datahenting
+### 🌐 Dynamiske ruter og datahenting
 
 Lær hvordan du håndterer dynamiske URL-er og henter data.
 
@@ -49,7 +49,7 @@ Lær hvordan du håndterer dynamiske URL-er og henter data.
 >
 > **🔍 Sjekk ut:** `fetchEmployeeById` i [`employee-service.ts`](src/utils/employee-service.ts).
 
-### 🏝️ 4. React-integrasjon med Astro Islands
+### 🏝️ React-integrasjon med Astro Islands
 
 Integrer interaktive React-komponenter sømløst i Astro.
 
@@ -61,7 +61,7 @@ Integrer interaktive React-komponenter sømløst i Astro.
 3.  **Legg til ReactCounter:** Legg inn `<ReactCounter>`-komponenten på en Astro-side. Fungerer komponenten slik du antok?
 4.  **Hydrering av komponenter:** Ta en kikkk på [Astros dokumentasjon om hydrering](https://docs.astro.build/en/guides/framework-components/#hydrating-interactive-components) og se om du får komponenten til å fungere slik du forventer.
 
-### ⚡ 5. Astro Client-side Routing
+### ⚡ Astro Client-side Routing
 
 Opplev raskere navigasjon med Astros innebygde klientruting.
 
@@ -71,7 +71,7 @@ Opplev raskere navigasjon med Astros innebygde klientruting.
     ```
 2.  **Test navigasjon:** Naviger mellom forskjellige sider og legg merke til at du nå slipper full sideoppdatering – bare innholdet skiftes raskt ut.
 
-### 🔄 6. Unpoly for avansert interaktivitet
+### 🔄 Unpoly for avansert interaktivitet
 
 Dykk inn i Unpoly for å skape rike brukeropplevelser.
 
