@@ -1,7 +1,11 @@
 ---
 import type { Employee } from "../pages/api/ansatte/_db";
 
-const { employee } = Astro.props as { employee: Employee};
+interface Props {
+    employee: Employee;
+}
+
+const { employee } = Astro.props;
 ---
 
 <div class="kls-card">
