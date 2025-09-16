@@ -1,71 +1,85 @@
-# Astro + Unpoly Workshop 🌟
+# 🚀 Astro + Unpoly Workshop 🌟
 
-Velkommen! Her skal du lære grunnleggende Astro med Unpoly for interaktive nettsider uten tung SPA.
+## ✨ Kom i gang
 
-## Kom i gang
+Følg disse stegene for å sette opp prosjektet og starte utviklingsserveren:
 
-1. Klon repoet og installer avhengigheter
-   ```sh
-   git clone [URL-TIL-REPO]
-   cd astro-workshop
-   npm install
-   npm run dev
-   ```
-2. Åpne http://localhost:4321 i nettleseren din
-3. Anbefalt: Installer Astro-plugin i Visual Studio Code, IntelliJ IDEA, e.l.
+1.  **Klon repoet og installer avhengigheter:**
+    ```sh
+    git clone git@github.com:KristianSelnas/astro-workshop.git
+    cd astro-workshop
+    npm install
+    ```
+2.  **Start utviklingsserveren:**
+    ```sh
+    npm run dev
+    ```
+3.  **Åpne i nettleseren:**
+    og gå til [http://localhost:4321](http://localhost:4321).
+4.  **Anbefalt verktøy:**
+    Installer Astro-plugin for din foretrukne IDE (f.eks. Visual Studio Code, IntelliJ IDEA) for best utviklingsopplevelse.
 
-## Workshop-oppgaver
+## 📚 Workshop-oppgaver
 
-### 1. Bli kjent med Astro
+### 🔭 1. Grunnleggende Astro
 
-1. Åpne `src/pages/index.astro` og endre teksten på forsiden (for eksempel overskrift eller innhold).
-2. Åpne layout-componenten og observer at layouts i Astro er en helt ordinær komponent med en `<slot/>` for å rendre children.
-3. Lag en ny side: Opprett `about.astro` i `src/pages` med f.eks. overskrift og litt tekst.
-4. Naviger mellom forsiden (/) og den nye about-siden (/about) og observer at hele siden lastes på nytt hver gang.
+Lær deg det grunnleggende i Astro og hvordan sidenavigasjon fungerer.
 
-> **Tips**
-> Styling i er lokalt scopet i komponenter i Astro. Hvis du legger en `<style>`-blokk i en komponent vil stylingen kun gjelde lokalt i komponenten.
+1.  **Endre forsideinnhold:** Åpne [`src/pages/index.astro`](src/pages/index.astro) og endre teksten på forsiden (f.eks. overskrift eller innhold).
+2.  **Forstå Layouts:** Åpne layout-komponenten ([`src/layouts/BaseLayout.astro`](src/layouts/BaseLayout.astro)) og observer at layouts i Astro er vanlige komponenter med en `<slot/>` for å rendre barn.
+3.  **Lag en ny side:** Opprett [`about.astro`](src/pages/about.astro) i [`src/pages`](src/pages/) med f.eks. en overskrift og litt tekst.
+4.  **Navigasjon uten Unpoly:** Naviger mellom forsiden (/) og den nye about-siden (/about) og observer at hele siden lastes på nytt hver gang.
 
-### 2. Komponenter
+> **💡 Tips:** Styling i Astro er lokalt scopet i komponenter. Hvis du legger en `<style>`-blokk i en komponent, vil stylingen kun gjelde lokalt i den komponenten.
 
-1. Opprett en menykomponent `Menu.astro` i `src/components`. Legg inn lenker til forsiden og about-siden. Ta i bruk meny-komponenten i `BaseLayout.astro`.
-2. Endre tittelen på about-siden ved hjelp av `title` prop'en til `BaseLayout`.
-3. Lag en enkel komponent `Hello.astro` under `/components`, med prop `name`. Bruk denne på forsiden og about-siden med ulike navn.
+### 🧩 2. Komponenter i Astro
 
-### 3. Dynamiske ruter
+Bygg gjenbrukbare komponenter for å strukturere koden din.
 
-1. Opprett filen `[id].astro` i `src/pages/ansatte/`
-2. Hent ut en ansatt fra databasen, basert på ID fra request-url'en.
-3. Vis navn, tittel og e-post for den ansatte.
+1.  **Menykomponent:** Opprett en menykomponent [`Menu.astro`](src/components/Menu.astro) i [`src/components`](src/components/). Legg inn lenker til forsiden og about-siden. Ta i bruk meny-komponenten i [`BaseLayout.astro`](src/layouts/BaseLayout.astro).
+2.  **Dynamisk tittel:** Endre tittelen på about-siden ved hjelp av `title` prop'en til `BaseLayout`.
+3.  **Enkel Hello-komponent:** Lag en enkel komponent [`Hello.astro`](src/components/Hello.astro) under [`/components`](src/components/) med prop `name`. Bruk denne på forsiden og about-siden med ulike navn.
 
-> **Tips**
-> Request-parametre kan hentes ut fra `Astro.params`.
+### 🌐 3. Dynamiske ruter og datahenting
 
-> **Tips**
-> Sjekk ut `fetchEmployeeById` i `employee-service`.
+Lær hvordan du håndterer dynamiske URL-er og henter data.
 
-### 4. Bruk av React island i Astro
+1.  **Opprett dynamisk rute:** Opprett filen [`[id].astro`](src/pages/ansatte/[id].astro) i [`src/pages/ansatte/`](src/pages/ansatte/).
+2.  **Hent ansattdata:** Hent ut en ansatt fra databasen basert på ID fra request-URL-en.
+3.  **Vis ansattinformasjon:** Vis navn, tittel og e-post for den ansatte.
 
-1. Installer Astros React-integrasjon (svar Ja på alle spørsmålene):
+> **💡 Tips:** Request-parametre kan hentes ut fra `Astro.params`.
+>
+> **🔍 Sjekk ut:** `fetchEmployeeById` i [`employee-service.ts`](src/utils/employee-service.ts).
 
-```sh
-npx astro add react
-```
+### 🏝️ 4. React-integrasjon med Astro Islands
 
-2. Åpne `components/ReactCounter.tsx`. Hvordan forventer du at denne kompoenten skal fungere?
-3. Legg inn `<ReactCounter>`-komponenten på en Astro-side. Fungerer komponenten slik du antok?
-4. Ta en kikkk på [Astros dokumentasjon](https://docs.astro.build/en/guides/framework-components/#hydrating-interactive-components) og se om du får kompnenten til å fungere slik du forventer.
+Integrer interaktive React-komponenter sømløst i Astro.
 
-### 5. Client Router
+1.  **Installer React-integrasjon:** Installer Astros React-integrasjon (svar Ja på alle spørsmålene):
+    ```sh
+    npx astro add react
+    ```
+2.  **Forstå ReactCounter:** Åpne [`components/ReactCounter.tsx`](src/components/ReactCounter.tsx). Hvordan forventer du at denne komponenten skal fungere?
+3.  **Legg til ReactCounter:** Legg inn `<ReactCounter>`-komponenten på en Astro-side. Fungerer komponenten slik du antok?
+4.  **Hydrering av komponenter:** Ta en kikkk på [Astros dokumentasjon om hydrering](https://docs.astro.build/en/guides/framework-components/#hydrating-interactive-components) og se om du får komponenten til å fungere slik du forventer.
 
-1. Åpne `src/layouts/BaseLayout.astro` og legg til `<ClientRouter>` i `<head>`.
-   > import { ClientRouter } from "astro:transitions";
-2. Naviger mellom forskjellige sider og legg merke til at du nå slipper full sideoppdatering – bare innholdet skiftes raskt ut.
+### ⚡ 5. Astro Client-side Routing
 
-### 6. Unpoly
+Opplev raskere navigasjon med Astros innebygde klientruting.
 
-1. Åpne `src/layouts/BaseLayout.astro`. Fjern ClientRouter og kommenter inn Unpoly
-2. Finn `<a>`-taggene i menyen og legg til `up-follow`, for eksempel `<a href="/about" up-follow>Om</a>`.
-3. Naviger mellom forskjellige sider og legg merke til at du nå slipper full sideoppdatering – bare innholdet skiftes raskt ut.
-4. Legg til `up-transition="move-left"` på lenkene i menyen for å animere overgangen mellom sidene
-5. Åpne `ansatte/index.astro`. Legg til `up-layer="new"`på "Legg til"-knappen. Klikk på knappen, og se hva som skjer.
+1.  **Aktiver ClientRouter:** Åpne [`src/layouts/BaseLayout.astro`](src/layouts/BaseLayout.astro) og legg til `<ClientRouter>` i `<head>`.
+    ```astro
+    import { ClientRouter } from "astro:transitions";
+    ```
+2.  **Test navigasjon:** Naviger mellom forskjellige sider og legg merke til at du nå slipper full sideoppdatering – bare innholdet skiftes raskt ut.
+
+### 🔄 6. Unpoly for avansert interaktivitet
+
+Dykk inn i Unpoly for å skape rike brukeropplevelser.
+
+1.  **Fjern ClientRouter, aktiver Unpoly:** Åpne [`src/layouts/BaseLayout.astro`](src/layouts/BaseLayout.astro). Fjern `ClientRouter` og kommenter inn Unpoly-oppsettet.
+2.  **Aktiver `up-follow`:** Finn `<a>`-taggene i menyen og legg til `up-follow`, for eksempel `<a href="/about" up-follow>Om</a>`.
+3.  **Test Unpoly-navigasjon:** Naviger mellom forskjellige sider og legg merke til at du nå slipper full sideoppdatering – bare innholdet skiftes raskt ut.
+4.  **Animerte overganger:** Legg til `up-transition="move-left"` på lenkene i menyen for å animere overgangen mellom sidene.
+5.  **Unpoly Layers:** Åpne [`ansatte/index.astro`](src/pages/ansatte/index.astro). Legg til `up-layer="new"` på "Legg til"-knappen. Klikk på knappen og se hva som skjer!
