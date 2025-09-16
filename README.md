@@ -2,8 +2,6 @@
 
 ## ✨ Kom i gang
 
-Følg disse stegene for å sette opp prosjektet og starte utviklingsserveren:
-
 1.  **Klon repoet og installer avhengigheter:**
     ```sh
     git clone git@github.com:KristianSelnas/astro-workshop.git
@@ -22,7 +20,7 @@ Følg disse stegene for å sette opp prosjektet og starte utviklingsserveren:
 
 ### 🔭 1. Grunnleggende Astro
 
-Lær deg det grunnleggende i Astro og hvordan sidenavigasjon fungerer.
+Lær det grunnleggende i Astro og hvordan sidenavigasjon fungerer.
 
 1.  **Endre forsideinnhold:** Åpne `src/pages/index.astro` og endre teksten på forsiden (f.eks. overskrift eller innhold).
 2.  **Forstå Layouts:** Åpne layout-komponenten (`src/layouts/BaseLayout.astro`) og observer at layouts i Astro er vanlige komponenter med en `<slot/>` for å rendre barn.
@@ -33,7 +31,7 @@ Lær deg det grunnleggende i Astro og hvordan sidenavigasjon fungerer.
 
 ### 🧩 2. Komponenter i Astro
 
-Bygg gjenbrukbare komponenter for å strukturere koden din.
+Bygg gjenbrukbare komponenter for å strukturere koden.
 
 1.  **Menykomponent:** Opprett en menykomponent `Menu.astro` i `src/components`. Legg inn lenker til forsiden og about-siden. Ta i bruk meny-komponenten i `BaseLayout.astro`.
 2.  **Dynamisk tittel:** Endre tittelen på about-siden ved hjelp av `title` prop'en til `BaseLayout`.
